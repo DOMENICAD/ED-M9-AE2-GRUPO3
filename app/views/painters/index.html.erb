@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Painters</h1>
+
+ <%=  current_user&.rol %> <%#=  current_user.try(:email) %>
+
+ <% if  user_signed_in?  %>
+  <div id="painters">
+      <div class="accordion" id="accordionExample">
+        <% @painters.each do |painter| %>
+          <%= render painter %>
+        <% end %>
+      </div>
+  </div>
+<% end %>
+
+
+
+
+

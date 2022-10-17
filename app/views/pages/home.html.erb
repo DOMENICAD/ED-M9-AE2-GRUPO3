@@ -1,0 +1,23 @@
+<h1>Bienvenido a Babyworld</h1>
+<!--<p>Find me in app/views/pages/home.html.erb</p>-->
+<%= image_tag "foto.jpg" %>
+<% if current_user  %>
+  <h2>Hola [<%= current_user.role %>] <%= current_user.email %>  <% @a %></h2>
+  <p>Productos</p>
+  <%#= link_to "Sign out", destroy_user_session_path,  data: { turbo_method: :get }  %>
+
+  <p>Hola <%= current_user.email %>, <%= current_user.encrypted_password %></p>
+
+
+  <!- p>you are a [<%= current_user.role  %>]</p -->
+  <p>Estas listo para interactuar con la app</p>
+  <%= link_to "Sign out", destroy_user_session_path,  data: { turbo_method: :get }  %>
+
+<% else %>
+
+  <p>Su sesion no esta iniciada</p>
+  <%= link_to "Sign up!", new_user_registration_path %>
+  <br>
+  <%= link_to "Log in!", new_user_session_path  %>
+
+<% end %>
